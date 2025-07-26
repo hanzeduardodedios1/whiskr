@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:whiskr/focustimer.dart';
 
+
+
 void main() {
   runApp(const MyApp());
 }
@@ -43,7 +45,7 @@ void _tapAnywhere(BuildContext context) {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFA2D0C1),
+      backgroundColor: Color(0xFFDDCAB8),
       body: InkWell(
         onTap:() => _tapAnywhere(context),
         child: Center(
@@ -56,7 +58,7 @@ void _tapAnywhere(BuildContext context) {
                 style: GoogleFonts.josefinSans(
                   fontSize: 55,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Color(0xDD000000),
                   letterSpacing: 2.0,
                 ),
                 textAlign: TextAlign.center,
@@ -68,7 +70,7 @@ void _tapAnywhere(BuildContext context) {
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   fontSize: 18,
                   fontStyle: FontStyle.italic,
-                  color: Colors.white70,
+                  color: Color(0xDD000000),
                 ),
               ),
               Spacer(flex: 1,)
