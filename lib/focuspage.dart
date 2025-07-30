@@ -16,24 +16,27 @@ class _FocusPageState extends State<FocusPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FloatingActionButton(onPressed: () {
-              Navigator.pop(context);
-            },
-            
-            backgroundColor: Color(0xFFDDCAB8),
-            shape: RoundedRectangleBorder(
-              
-              side: BorderSide(
-                color: Colors.white,
-                width: 2.0,
+            SizedBox(
+              height: 75,
+            ),
+            OutlinedButton(onPressed: () {Navigator.pop(context);},
+            style: OutlinedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                side: const BorderSide(
+                  color: Colors.black,
+                  width: 3,
+                ),
+              shape: RoundedRectangleBorder(
+
+                
               )
-            )
-            ,
-            child: Text('End',
+            ),
+            child: Text('End', 
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 15,
-            ),),)
+              color: Colors.black,
+              
+            ),))
           ],
         ),
       )
