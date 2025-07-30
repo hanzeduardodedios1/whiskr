@@ -16,6 +16,12 @@ final List<int> minuteOptions = [5, 10, 15, 20, 25, 30, 45, 60];
 int currentSelectedMinute = 25;
 //timer method
 
+//focus timer variables
+  double _selectedMinutes = 25.0;
+
+  final double _minMinutes = 5.0;
+  final double _maxMinutes = 60.0;
+  final int _minuteStep = 5;
 
 
 
@@ -65,7 +71,25 @@ int currentSelectedMinute = 25;
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(
+                height: 300,
+              ),
+              Slider.adaptive(
+                value: _selectedMinutes, 
+                min: _minMinutes,
+                max: _maxMinutes,
+                divisions: ((_maxMinutes - _minMinutes) / _minuteStep).toInt(),
+                label: '${_selectedMinutes.toInt()} min',
 
+                onChanged: (double newValue) {
+                  setState(() {
+                    _selectedMinutes = newValue;
+                  });
+                  
+                },
+                activeColor: Colors.black,
+                inactiveColor: Colors.grey.shade400,
+                thumbColor: Colors.black,),
 
 
               ElevatedButton(onPressed: () {

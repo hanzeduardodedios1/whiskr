@@ -7,7 +7,11 @@ class FocusPage extends StatefulWidget {
   State<FocusPage> createState() => _FocusPageState();
 }
 
+
 class _FocusPageState extends State<FocusPage> {
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +21,7 @@ class _FocusPageState extends State<FocusPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: 75,
+              height: 405,
             ),
             OutlinedButton(onPressed: () {Navigator.pop(context);},
             style: OutlinedButton.styleFrom(
