@@ -18,6 +18,7 @@ int currentSelectedMinute = 25;
 
 //focus timer variables
   double _selectedMinutes = 25.0;
+  double get selectedMinutes => _selectedMinutes;
 
   final double _minMinutes = 5.0;
   final double _maxMinutes = 60.0;
@@ -93,7 +94,7 @@ int currentSelectedMinute = 25;
 
 
               ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => FocusPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FocusPage(selectedMinutes: _selectedMinutes)));
               }, 
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 253, 215, 203),
