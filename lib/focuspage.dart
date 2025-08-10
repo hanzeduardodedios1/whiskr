@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'focustimer.dart';
 
 class FocusPage extends StatefulWidget {
   
