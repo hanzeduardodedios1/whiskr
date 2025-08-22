@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whiskr/focuspage.dart';
+import 'package:whiskr/settings.dart';
 
 class TimerScreen extends StatefulWidget {
   const TimerScreen({super.key});
@@ -62,6 +63,7 @@ int currentSelectedMinute = 25;
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => SettingsPage())),
             )
 
           ],
