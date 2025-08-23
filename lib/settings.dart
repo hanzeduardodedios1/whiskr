@@ -18,8 +18,32 @@ class _SettingsPageState extends State<SettingsPage> {
         title: Text('Settings',
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          
         ),),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Account'),
+          ),
+          ListTile(
+            title: Text('Account'),
+          ),    
+          ListTile(
+            title: Text('Account'),
+          ),
+          ListTile(
+            title: Text('Account'),
+          ),
+          ListTile(
+            title: Text('Account'),
+          ),
+          ListTile(
+            title: Text('Account'),
+          ),
+          ListTile(
+            title: Text('Account'),
+          ),                                                        
+        ],
       ),
     );
   }

@@ -63,7 +63,7 @@ int currentSelectedMinute = 25;
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => SettingsPage())),
+              onTap: () => Navigator.push( context, MaterialPageRoute(builder: (context) => SettingsPage()), ),
             )
 
           ],
