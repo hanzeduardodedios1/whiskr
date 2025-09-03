@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whiskr/focuspage.dart';
+import 'package:whiskr/friends.dart';
 import 'package:whiskr/settings.dart';
 
 class TimerScreen extends StatefulWidget {
@@ -59,6 +60,7 @@ int currentSelectedMinute = 25;
             ListTile(
               leading: Icon(Icons.people_alt),
               title: Text('Friends'),
+              onTap: () => Navigator.push( context, MaterialPageRoute(builder: (context) => FriendsPage()),),
             ),
             ListTile(
               leading: Icon(Icons.settings),
