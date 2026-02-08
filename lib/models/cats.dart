@@ -1,13 +1,64 @@
-class Cat {
-  final String name;
-  final String imageUrl; // Path to the cat's image asset
-  final String description; // Optional: add more properties later
-  // Add more properties for gacha-related stats, rarity, etc. later
+import 'package:flutter/material.dart';
+import 'package:flame/widgets.dart';
+import 'package:flame/extensions.dart';
+import 'package:whiskr/cat_state_manager.dart';
 
-  const Cat({
-    required this.name,
-    required this.imageUrl,
-    this.description = '', // Provide a default or make it required
-  });
+class BlackCatIdle extends StatelessWidget {
+  const BlackCatIdle({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 150,
+      height: 150,
+      child: SpriteAnimationWidget.asset(
+        path: 'BlackCat/IdleCatb.png',
+        data: SpriteAnimationData.sequenced(
+          amount: 7,
+          stepTime: 0.1,
+          // TO FIX TO SINGLE FRAME MOVEMENT:
+          // USE 32, 32 for vector
+          textureSize: Vector2(32, 32), 
+        ),
+      ),
+    );
+  }
 }
-//WIP
+
+class CatIdle extends CatSpriteBase {
+  const CatIdle({super.key}) : super(
+    assetPath: 'BlackCat/IdleCatb.png', 
+    frames: 7,
+    frameWidth: 32.0, 
+    frameHeight: 32.0,
+  );
+}
+
+class CatRun extends CatSpriteBase {
+  const CatRun({super.key}) : super(
+    assetPath: 'BlackCat/RunCatb.png', 
+    frames: 7,
+    frameWidth: 32.0, 
+    frameHeight: 32.0,
+    speed: 0.1,
+  );
+}
+
+class CatJump extends CatSpriteBase {
+  const CatJump({super.key}) : super(
+    assetPath: 'BlackCat/JumpCabt.png', 
+    frames: 13,
+    frameWidth: 32.0, 
+    frameHeight: 32.0,
+  );
+}
+
+class CatSitting extends CatSpriteBase {
+  const CatSitting({super.key}) : super(
+    assetPath: 'BlackCat/Sittingb.png', 
+    frames: 3,
+    frameWidth: 32.0, 
+    frameHeight: 32.0,
+    speed: 0.7,
+  );
+}

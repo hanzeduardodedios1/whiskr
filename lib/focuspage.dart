@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'cat_state_manager.dart';
 
 class FocusPage extends StatefulWidget {
   
@@ -65,10 +66,20 @@ void dispose() {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
-            SizedBox(
-              height: 405,
+            CatBehaviorManager(
+              // Calculate current minutes based on remaining seconds
+              currentMinutes: (_totalDurationInSeconds - _elapsedSeconds) / 60, 
+              
+              // Pass the total time selected from the previous screen
+              totalMinutes: widget.selectedMinutes, 
+              
+              // If elapsed seconds is less than total, the timer is still active
+              isTimerRunning: _elapsedSeconds < _totalDurationInSeconds && _elapsedSeconds > 0,
             ),
+            const SizedBox(height: 40,),
+
             Text(
               timeLeftString,
               style: const TextStyle(
@@ -78,7 +89,6 @@ void dispose() {
               ),
               ),
 
-            const SizedBox(height: 40),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
               child: LinearProgressIndicator(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whiskr/focuspage.dart';
 import 'package:whiskr/friends.dart';
+import 'package:whiskr/models/cats.dart';
 import 'package:whiskr/settings.dart';
 
 class TimerScreen extends StatefulWidget {
@@ -76,9 +77,12 @@ int currentSelectedMinute = 25;
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 300,
-              ),
+              
+              // CENTERED CAT SPRITE
+              const BlackCatIdle(),
+              const SizedBox(height: 40,),
+
+              // SLIDER: When clicked it demonstrates amount of time to select
               Slider.adaptive(
                 value: _selectedMinutes, 
                 min: _minMinutes,
