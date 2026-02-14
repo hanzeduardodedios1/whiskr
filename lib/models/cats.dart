@@ -12,7 +12,7 @@ class BlackCatIdle extends StatelessWidget {
       width: 150,
       height: 150,
       child: SpriteAnimationWidget.asset(
-        path: 'BlackCat/IdleCatb.png',
+        path: 'IdleCatb.png',
         data: SpriteAnimationData.sequenced(
           amount: 7,
           stepTime: 0.1,
@@ -27,7 +27,7 @@ class BlackCatIdle extends StatelessWidget {
 
 class CatIdle extends CatSpriteBase {
   const CatIdle({super.key}) : super(
-    assetPath: 'BlackCat/IdleCatb.png', 
+    assetPath: 'IdleCatb.png', 
     frames: 7,
     frameWidth: 32.0, 
     frameHeight: 32.0,
@@ -36,7 +36,7 @@ class CatIdle extends CatSpriteBase {
 
 class CatRun extends CatSpriteBase {
   const CatRun({super.key}) : super(
-    assetPath: 'BlackCat/RunCatb.png', 
+    assetPath: 'RunCatb.png', 
     frames: 7,
     frameWidth: 32.0, 
     frameHeight: 32.0,
@@ -46,7 +46,7 @@ class CatRun extends CatSpriteBase {
 
 class CatJump extends CatSpriteBase {
   const CatJump({super.key}) : super(
-    assetPath: 'BlackCat/JumpCabt.png', 
+    assetPath: 'JumpCabt.png', 
     frames: 13,
     frameWidth: 32.0, 
     frameHeight: 32.0,
@@ -55,7 +55,7 @@ class CatJump extends CatSpriteBase {
 
 class CatSitting extends CatSpriteBase {
   const CatSitting({super.key}) : super(
-    assetPath: 'BlackCat/Sittingb.png', 
+    assetPath: 'Sittingb.png', 
     frames: 3,
     frameWidth: 32.0, 
     frameHeight: 32.0,

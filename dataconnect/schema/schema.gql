@@ -1,0 +1,41 @@
+type User @table {
+  username: String!
+  email: String!
+  createdAt: Timestamp!
+  avatarUrl: String
+  catTreats: Int
+}
+
+type Category @table {
+  user: User!
+  name: String!
+  createdAt: Timestamp!
+  description: String
+  icon: String
+}
+
+type Task @table {
+  user: User!
+  category: Category
+  title: String!
+  status: String!
+  createdAt: Timestamp!
+  description: String
+  dueDate: Timestamp
+  priority: String
+  completedAt: Timestamp
+}
+
+type CatCompanion @table {
+  name: String!
+  requiredTreats: Int!
+  imageUrl: String!
+  createdAt: Timestamp!
+  description: String
+}
+
+type UserCatCompanion @table(key: ["user", "catCompanion"]) {
+  user: User!
+  catCompanion: CatCompanion!
+  unlockedAt: Timestamp!
+}

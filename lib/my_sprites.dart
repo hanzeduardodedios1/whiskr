@@ -13,7 +13,7 @@ class MyGame extends FlameGame {
   Future<void> onLoad() async {
     // 1. Load the image (Flame looks in assets/images/ by default)
     // Ensure 'BlackCat/IdleCatb.png' is in your pubspec.yaml
-    final spriteSheetImage = await images.load('BlackCat/IdleCatb.png');
+    final spriteSheetImage = await images.load('IdleCatb.png');
 
     // 2. Define the layout
     final spriteSheet = SpriteSheet.fromColumnsAndRows(

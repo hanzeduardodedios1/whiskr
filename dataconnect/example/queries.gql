@@ -1,0 +1,70 @@
+query listAllTasks @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  tasks {
+    id
+    title
+    description
+    status
+    priority
+    dueDate
+    completedAt
+    createdAt
+    user {
+      id
+      username
+      email
+    }
+    category {
+      id
+      name
+    }
+  }
+}
+
+query getTaskById($id: UUID!) @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  task(id: $id) {
+    id
+    title
+    description
+    status
+    priority
+    dueDate
+    completedAt
+    createdAt
+    user {
+      id
+      username
+      email
+    }
+    category {
+      id
+      name
+    }
+  }
+}
+
+mutation createTask($title: String!, $description: String, $status: String!, $priority: String, $dueDate: Timestamp, $categoryId: UUID) @auth(level: USER) {
+  task_insert(data: {
+    title: $title,
+    description: $description,
+    status: $status,
+    priority: $priority,
+    dueDate: $dueDate,
+    userId_expr: "auth.uid",
+    categoryId: $categoryId,
+    createdAt_expr: "request.time"
+  }) {
+    id
+  }
+}
+
+mutation updateTaskStatus($id: UUID!, $status: String!) @auth(level: USER) {
+  task_update(
+    key: {id: $id},
+    data: {
+      status: $status
+      completedAt_expr: "request.time"
+    }
+  ) {
+    id
+  }
+}

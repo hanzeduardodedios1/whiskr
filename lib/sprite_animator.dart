@@ -7,7 +7,7 @@ void main() {
       body: Center(
         child: SpriteAnimator(
           // 1. Ensure this path matches your pubspec.yaml exactly
-          imagePath: 'assets/images/BlackCat/IdleCatb.png', 
+          imagePath: 'assets/images/IdleCatb.png', 
           frameCount: 8, // 2. Change this to the number of cats in your strip
           frameWidth: 100,
           frameHeight: 100,

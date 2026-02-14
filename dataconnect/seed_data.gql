@@ -1,0 +1,76 @@
+mutation CreateSeedData @transaction @auth(level: USER, insecureReason: "Seed data creation is safe for all logged in users.") {
+  user_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      username: "demouser1",
+      email: "demouser1@example.com",
+      createdAt: "2024-01-01T00:00:00Z"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      username: "demouser2",
+      email: "demouser2@example.com",
+      createdAt: "2024-01-01T00:00:00Z"
+    }
+  ])
+  category_insertMany(data: [
+    {
+      id: "660e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      name: "Work",
+      createdAt: "2024-01-01T00:00:00Z"
+    },
+    {
+      id: "660e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      name: "Personal",
+      createdAt: "2024-01-01T00:00:00Z"
+    }
+  ])
+  task_insertMany(data: [
+    {
+      id: "770e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      categoryId: "660e8400-e29b-41d4-a716-446655440000",
+      title: "Write Report",
+      status: "In Progress",
+      createdAt: "2024-01-02T00:00:00Z"
+    },
+    {
+      id: "770e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      categoryId: "660e8400-e29b-41d4-a716-446655440001",
+      title: "Grocery Shopping",
+      status: "To Do",
+      createdAt: "2024-01-02T00:00:00Z"
+    }
+  ])
+  catCompanion_insertMany(data: [
+    {
+      id: "880e8400-e29b-41d4-a716-446655440000",
+      name: "Whiskers",
+      imageUrl: "https://example.com/whiskers.jpg",
+      requiredTreats: 5,
+      createdAt: "2024-01-03T00:00:00Z"
+    },
+    {
+      id: "880e8400-e29b-41d4-a716-446655440001",
+      name: "Mittens",
+      imageUrl: "https://example.com/mittens.jpg",
+      requiredTreats: 3,
+      createdAt: "2024-01-03T00:00:00Z"
+    }
+  ])
+  userCatCompanion_insertMany(data: [
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      catCompanionId: "880e8400-e29b-41d4-a716-446655440000",
+      unlockedAt: "2024-01-04T00:00:00Z"
+    },
+    {
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      catCompanionId: "880e8400-e29b-41d4-a716-446655440001",
+      unlockedAt: "2024-01-04T00:00:00Z"
+    }
+  ])
+}
